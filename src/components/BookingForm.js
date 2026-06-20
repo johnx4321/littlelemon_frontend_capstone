@@ -16,8 +16,18 @@ function BookingForm({ availableTimes, dispatch }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch({ type: 'BOOK_SLOT', payload: time });
-    setTime('');
+
+    const formData = {
+      date,
+      time,
+      guests,
+      occasion,
+    };
+
+    if (window.submitAPI(formData)) {
+      dispatch({ type: 'BOOK_SLOT', payload: time });
+      setTime('');
+    }
   };
 
   return (

@@ -1,12 +1,9 @@
 import React from 'react';
 import BookingForm from './BookingForm';
 import BookingSlot from './BookingSlot';
-import { initializeTimes } from '../utils/updateTimes';
 import '../HomePage.css';
 
 function BookingPage({ availableTimes, dispatch }) {
-  const allTimes = initializeTimes();
-
   return (
     <section className="booking-page">
       <h1>Reserve a Table</h1>
@@ -19,13 +16,19 @@ function BookingPage({ availableTimes, dispatch }) {
         <section className="booking-slots" aria-label="Table booking slots">
           <h2>Table Availability</h2>
           <ul className="booking-slots-list">
-            {allTimes.map((slotTime) => (
-              <BookingSlot
-                key={slotTime}
-                time={slotTime}
-                available={availableTimes.includes(slotTime)}
-              />
-            ))}
+            {availableTimes.length === 0 ? (
+              <li className="booking-slot booking-slot--booked">
+                <span>No available slots for this date</span>
+              </li>
+            ) : (
+              availableTimes.map((slotTime) => (
+                <BookingSlot
+                  key={slotTime}
+                  time={slotTime}
+                  available
+                />
+              ))
+            )}
           </ul>
         </section>
 
