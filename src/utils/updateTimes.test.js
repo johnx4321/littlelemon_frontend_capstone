@@ -1,41 +1,41 @@
-import { fetchAPI } from '../api';
+import * as api from '../api';
 import { initializeTimes, updateTimes } from './updateTimes';
 
-test('initializeTimes returns available times for today from the API', () => {
+afterEach(() => {
+  jest.restoreAllMocks();
+});
+
+test('initializeTimes returns a non-empty array of available booking times from fetchAPI', () => {
+  const mockTimes = ['17:00', '18:00', '19:00', '20:00'];
+  const fetchAPISpy = jest.spyOn(api, 'fetchAPI').mockReturnValue(mockTimes);
+
   const result = initializeTimes();
 
-  expect(Array.isArray(result)).toBe(true);
-  result.forEach((time) => {
-    expect(time).toMatch(/^\d{1,2}:\d{2}$/);
-  });
+  expect(fetchAPISpy).toHaveBeenCalledTimes(1);
+  expect(fetchAPISpy).toHaveBeenCalledWith(expect.any(Date));
+  expect(result).toEqual(mockTimes);
+  expect(result.length).toBeGreaterThan(0);
 });
 
-test('updateTimes fetches available times for the selected date', () => {
+test('updateTimes returns available times for the selected date from fetchAPI', () => {
+  const selectedDate = '2026-06-20';
+  const mockTimes = ['17:30', '19:00', '20:30', '21:00'];
+  const fetchAPISpy = jest.spyOn(api, 'fetchAPI').mockReturnValue(mockTimes);
+
   const result = updateTimes([], {
     type: 'UPDATE_TIMES',
-    date: '2026-06-20',
+    date: selectedDate,
   });
 
-  expect(Array.isArray(result)).toBe(true);
-  expect(result).toEqual(fetchAPI(new Date(2026, 5, 20)));
-});
-
-test('updateTimes returns different times for different dates', () => {
-  const firstDateTimes = updateTimes([], {
-    type: 'UPDATE_TIMES',
-    date: '2026-06-20',
-  });
-  const secondDateTimes = updateTimes([], {
-    type: 'UPDATE_TIMES',
-    date: '2026-06-21',
-  });
-
-  expect(firstDateTimes).not.toEqual(secondDateTimes);
+  expect(fetchAPISpy).toHaveBeenCalledTimes(1);
+  expect(fetchAPISpy).toHaveBeenCalledWith(new Date(2026, 5, 20));
+  expect(result).toEqual(mockTimes);
+  expect(result.length).toBeGreaterThan(0);
 });
 
 test('updateTimes removes a booked slot from available times', () => {
-  const state = initializeTimes();
-  const bookedTime = state[0];
+  const state = ['17:00', '18:00', '19:00'];
+  const bookedTime = '18:00';
 
   const result = updateTimes(state, {
     type: 'BOOK_SLOT',

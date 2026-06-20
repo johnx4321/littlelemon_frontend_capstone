@@ -9,10 +9,10 @@ import Footer from './Footer';
 function App() {
   return (
     <BrowserRouter>
-      <div className="nav-bar">
+      <header className="nav-bar">
         <Header />
         <Nav />
-      </div>
+      </header>
       <Main />
       <Footer />
     </BrowserRouter>

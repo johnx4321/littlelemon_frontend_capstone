@@ -9,33 +9,33 @@ function Footer() {
         <img className="logo" src={logo} alt="Little Lemon restaurant logo" />
       </section>
 
-      <section className="footer-nav" aria-label="Site navigation">
+      <nav className="footer-nav" aria-label="Footer navigation">
         <h3>Doormat Navigation</h3>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/menu">Menu</Link></li>
-          <li><Link to="/booking">Reservations</Link></li>
-          <li><Link to="/order-online">Order Online</Link></li>
+          <li><Link to="/" aria-label="On Click">Home</Link></li>
+          <li><Link to="/about" aria-label="On Click">About</Link></li>
+          <li><Link to="/menu" aria-label="On Click">Menu</Link></li>
+          <li><Link to="/booking" aria-label="On Click">Reservations</Link></li>
+          <li><Link to="/order-online" aria-label="On Click">Order Online</Link></li>
         </ul>
-      </section>
+      </nav>
 
       <section className="footer-contact" aria-label="Contact information">
         <h3>Contact</h3>
         <address>
           Little Lemon<br />
           Chicago, IL<br />
-          <a href="tel:+13125550123">(312) 555-0123</a><br />
-          <a href="mailto:hello@littlelemon.com">hello@littlelemon.com</a>
+          <a href="tel:+13125550123" aria-label="On Click">(312) 555-0123</a><br />
+          <a href="mailto:hello@littlelemon.com" aria-label="On Click">hello@littlelemon.com</a>
         </address>
       </section>
 
       <section className="footer-social" aria-label="Social media links">
         <h3>Social Media</h3>
         <ul>
-          <li><a href="https://facebook.com">Facebook</a></li>
-          <li><a href="https://instagram.com">Instagram</a></li>
-          <li><a href="https://twitter.com">Twitter</a></li>
+          <li><a href="https://facebook.com" aria-label="On Click">Facebook</a></li>
+          <li><a href="https://instagram.com" aria-label="On Click">Instagram</a></li>
+          <li><a href="https://twitter.com" aria-label="On Click">Twitter</a></li>
         </ul>
       </section>
 

@@ -4,11 +4,11 @@ import logo from './assets/Logo.svg';
 
 function Header() {
   return (
-    <header className="header">
-      <Link to="/" aria-label="Little Lemon home">
+    <div className="header">
+      <Link to="/" aria-label="On Click">
         <img className="logo" src={logo} alt="Little Lemon restaurant logo" />
       </Link>
-    </header>
+    </div>
   );
 }
 

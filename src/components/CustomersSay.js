@@ -13,18 +13,22 @@ function StarRating({ rating }) {
 
 function CustomersSay() {
   return (
-    <section className="testimonials">
-      <h2>What our customers say!</h2>
-      <div className="testimonials-grid">
+    <section className="testimonials" aria-labelledby="testimonials-heading">
+      <h2 id="testimonials-heading">What our customers say!</h2>
+      <ul className="testimonials-grid">
         {testimonials.map((testimonial) => (
-          <article className="testimonial-card" key={testimonial.id}>
-            <StarRating rating={testimonial.rating} />
-            <img src={customerImage} alt={`${testimonial.name} portrait`} />
-            <p>&ldquo;{testimonial.quote}&rdquo;</p>
-            <span className="testimonial-name">{testimonial.name}</span>
-          </article>
+          <li key={testimonial.id}>
+            <article className="testimonial-card">
+              <StarRating rating={testimonial.rating} />
+              <img src={customerImage} alt={`${testimonial.name} portrait`} />
+              <blockquote>
+                <p>&ldquo;{testimonial.quote}&rdquo;</p>
+              </blockquote>
+              <cite className="testimonial-name">{testimonial.name}</cite>
+            </article>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

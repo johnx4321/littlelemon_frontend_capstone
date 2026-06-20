@@ -5,6 +5,21 @@
   margin-top: var(--space-md);
 }
 
+.booking-form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.booking-form legend {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-primary-green);
+  margin-bottom: var(--space-xs);
+}
+
 .booking-form label {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -34,6 +49,20 @@
 .booking-form button {
   margin-top: var(--space-xs);
   cursor: pointer;
+}
+
+.booking-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  background-color: var(--color-highlight-gray);
+  color: var(--color-text);
+  border-color: rgba(73, 94, 87, 0.35);
+}
+
+.field-error {
+  font-size: 0.875rem;
+  color: var(--color-secondary-orange);
+  line-height: 1.4;
 }
 
 .booking-layout {

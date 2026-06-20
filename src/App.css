@@ -20,6 +20,37 @@ header img.logo {
   width: auto;
 }
 
+.navigation {
+  position: relative;
+}
+
+.navigation-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem;
+  background: transparent;
+  border: 2px solid var(--color-primary-green);
+  border-radius: var(--radius-button);
+  cursor: pointer;
+}
+
+.navigation-toggle img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.navigation-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.navigation-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
 .navigation-list {
   display: flex;
   flex-wrap: wrap;
@@ -103,13 +134,25 @@ header img.logo {
 
 @media (max-width: 768px) {
   .nav-bar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .navigation-toggle {
+    display: inline-flex;
+    margin-left: auto;
   }
 
   .navigation-list {
+    display: none;
     flex-direction: column;
     gap: var(--space-xs);
+    width: 100%;
+    padding-top: var(--space-sm);
+  }
+
+  .navigation-list--open {
+    display: flex;
   }
 
   .site-footer {
