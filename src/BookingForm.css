@@ -35,3 +35,65 @@
   margin-top: var(--space-xs);
   cursor: pointer;
 }
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+  margin-top: var(--space-md);
+}
+
+.booking-slots h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.booking-slots-list {
+  display: grid;
+  gap: var(--space-xs);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.booking-slot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(73, 94, 87, 0.2);
+}
+
+.booking-slot--available {
+  background-color: var(--color-highlight-gray);
+}
+
+.booking-slot--booked {
+  background-color: rgba(238, 153, 114, 0.25);
+  border-color: var(--color-secondary-orange);
+}
+
+.booking-slot-time {
+  font-weight: 700;
+  color: var(--color-primary-green);
+}
+
+.booking-slot-status {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.booking-slot--available .booking-slot-status {
+  color: var(--color-primary-green);
+}
+
+.booking-slot--booked .booking-slot-status {
+  color: var(--color-secondary-orange);
+}
+
+@media (max-width: 768px) {
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+}
