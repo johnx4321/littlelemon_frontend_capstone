@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../BookingForm.css';
 
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes, dispatch, submitForm }) {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [guests, setGuests] = useState('1');
@@ -17,17 +17,12 @@ function BookingForm({ availableTimes, dispatch }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const formData = {
+    submitForm({
       date,
       time,
       guests,
       occasion,
-    };
-
-    if (window.submitAPI(formData)) {
-      dispatch({ type: 'BOOK_SLOT', payload: time });
-      setTime('');
-    }
+    });
   };
 
   return (

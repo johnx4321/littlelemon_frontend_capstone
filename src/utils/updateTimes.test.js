@@ -1,3 +1,4 @@
+import { fetchAPI } from '../api';
 import { initializeTimes, updateTimes } from './updateTimes';
 
 test('initializeTimes returns available times for today from the API', () => {
@@ -16,7 +17,7 @@ test('updateTimes fetches available times for the selected date', () => {
   });
 
   expect(Array.isArray(result)).toBe(true);
-  expect(result).toEqual(window.fetchAPI(new Date(2026, 5, 20)));
+  expect(result).toEqual(fetchAPI(new Date(2026, 5, 20)));
 });
 
 test('updateTimes returns different times for different dates', () => {

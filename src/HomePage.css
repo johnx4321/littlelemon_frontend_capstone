@@ -259,6 +259,22 @@
   font-weight: 700;
 }
 
+.confirmed-booking {
+  padding: var(--space-xl) 5%;
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.confirmed-booking h1 {
+  color: var(--color-primary-green);
+  margin-bottom: var(--space-sm);
+}
+
+.confirmed-booking p {
+  max-width: 40rem;
+  margin: 0 auto var(--space-md);
+}
+
 .coming-soon {
   padding: var(--space-xl) 5%;
   background-color: var(--color-white);
@@ -302,7 +318,8 @@
   .testimonials,
   .chicago,
   .booking-page,
-  .coming-soon {
+  .coming-soon,
+  .confirmed-booking {
     padding: var(--space-lg) 5%;
   }
 }

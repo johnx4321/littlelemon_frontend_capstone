@@ -3,7 +3,7 @@ import BookingForm from './BookingForm';
 import BookingSlot from './BookingSlot';
 import '../HomePage.css';
 
-function BookingPage({ availableTimes, dispatch }) {
+function BookingPage({ availableTimes, dispatch, submitForm }) {
   return (
     <section className="booking-page">
       <h1>Reserve a Table</h1>
@@ -35,6 +35,7 @@ function BookingPage({ availableTimes, dispatch }) {
         <BookingForm
           availableTimes={availableTimes}
           dispatch={dispatch}
+          submitForm={submitForm}
         />
       </div>
     </section>
