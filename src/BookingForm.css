@@ -1,0 +1,37 @@
+.booking-form {
+  display: grid;
+  max-width: 20rem;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.booking-form label {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary-green);
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: var(--line-height-body);
+  color: var(--color-text);
+  background-color: var(--color-white);
+  border: 1px solid rgba(73, 94, 87, 0.35);
+  border-radius: 0.5rem;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  outline: 2px solid var(--color-primary-yellow);
+  border-color: var(--color-primary-green);
+}
+
+.booking-form button {
+  margin-top: var(--space-xs);
+  cursor: pointer;
+}
