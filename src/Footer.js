@@ -3,10 +3,12 @@ import logo from './assets/Logo.svg';
 
 function Footer() {
   return (
-    <footer>
-      <img src={logo} alt="Little Lemon restaurant logo" />
+    <footer className="site-footer">
+      <section className="footer-logo" aria-label="Little Lemon logo">
+        <img className="logo" src={logo} alt="Little Lemon restaurant logo" />
+      </section>
 
-      <section aria-label="Site navigation">
+      <section className="footer-nav" aria-label="Site navigation">
         <h3>Doormat Navigation</h3>
         <ul>
           <li><a href="/">Home</a></li>
@@ -17,7 +19,7 @@ function Footer() {
         </ul>
       </section>
 
-      <section aria-label="Contact information">
+      <section className="footer-contact" aria-label="Contact information">
         <h3>Contact</h3>
         <address>
           Little Lemon<br />
@@ -27,7 +29,7 @@ function Footer() {
         </address>
       </section>
 
-      <section aria-label="Social media links">
+      <section className="footer-social" aria-label="Social media links">
         <h3>Social Media</h3>
         <ul>
           <li><a href="https://facebook.com">Facebook</a></li>
@@ -36,7 +38,10 @@ function Footer() {
         </ul>
       </section>
 
-      <p>Copyright &copy; {new Date().getFullYear()} Little Lemon. All rights reserved.</p>
+      <p className="copyright">
+        Copyright &copy; {new Date().getFullYear()}{' '}
+        <span>Little Lemon</span>. All rights reserved.
+      </p>
     </footer>
   );
 }

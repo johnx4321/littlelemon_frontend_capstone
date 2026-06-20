@@ -2,10 +2,16 @@ import React from 'react';
 
 function Main() {
   return (
-    <main>
-      <section>
+    <main className="main-content">
+      <section className="hero">
         <h1>Little Lemon</h1>
-        <p>Chicago&apos;s favorite neighborhood Mediterranean restaurant.</p>
+        <p className="hero-location">
+          <span className="highlight">Chicago</span>
+        </p>
+        <p className="hero-tagline">
+          A <span className="accent">Mediterranean</span> neighborhood restaurant
+          serving traditional recipes with a modern twist.
+        </p>
       </section>
     </main>
   );
