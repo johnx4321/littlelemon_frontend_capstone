@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-label="Chef preparing Mediterranean dishes">
+  <rect width="800" height="400" fill="#333333"/>
+  <rect x="60" y="40" width="680" height="320" rx="16" fill="#495E57" opacity="0.6"/>
+  <text x="400" y="220" text-anchor="middle" font-family="Karla, sans-serif" font-size="32" fill="#FFFFFF">Mediterranean Kitchen</text>
+</svg>

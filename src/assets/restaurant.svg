@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Little Lemon restaurant in Chicago">
+  <rect width="800" height="500" fill="#495E57"/>
+  <rect x="80" y="120" width="640" height="260" rx="16" fill="#EDEFEE" opacity="0.2"/>
+  <text x="400" y="280" text-anchor="middle" font-family="Markazi Text, serif" font-size="48" fill="#F4CE14">Little Lemon Chicago</text>
+</svg>
